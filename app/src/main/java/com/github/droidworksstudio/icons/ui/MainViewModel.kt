@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.droidworksstudio.icons.R
 import com.github.droidworksstudio.icons.model.AppInfo
 import com.github.droidworksstudio.icons.model.Feature
 import com.github.droidworksstudio.icons.util.MenuItem
@@ -27,9 +28,33 @@ import javax.xml.parsers.DocumentBuilderFactory
 @Suppress("DEPRECATION")
 class MainViewModel : ViewModel() {
 
-    val lettersList = mutableStateListOf("Ab", "Cd", "Ef", "Gh", "Ij", "Kl", "Mn", "Op", "Qr", "St", "Uv", "Wx", "Yz", "Bc", "De", "Fg")
+    val drawableList = mutableStateListOf(
+        R.drawable.mlauncher,
+        R.drawable.olauncher,
+        R.drawable.yamlauncher,
+        R.drawable.lens_launcher,
+        R.drawable.action_launcher,
+        R.drawable.activity_launcher,
+        R.drawable.go_launcher,
+        R.drawable.arrow_launcher,
+        R.drawable.aster_launcher,
+        R.drawable.atv_launcher,
+        R.drawable.atom_launcher,
+        R.drawable.before_launcher,
+        R.drawable.blackberry_launcher,
+        R.drawable.discreet_launcher,
+        R.drawable.dna_launcher,
+        R.drawable.everywhere_launcher,
+        R.drawable.flick_launcher,
+        R.drawable.flow_launcher,
+        R.drawable.fossify_launcher,
+        R.drawable.game_launcher,
+        R.drawable.google_launcher,
+        R.drawable.holo_launcher,
+        R.drawable.kiss_launcher
+    )
 
-    val drawerItems = listOf(MenuItem.Home, MenuItem.Apply, MenuItem.WhyLettersIcons)
+    val drawerItems = listOf(MenuItem.Home, MenuItem.Apply, MenuItem.WhyUsIconPack)
 
     val appFeatures = listOf(
         Feature(

@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -56,8 +57,8 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -66,6 +67,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
@@ -107,7 +109,7 @@ class MainActivity : ComponentActivity() {
 @SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LetterIconPackApp(
+fun DemoIconPackApp(
     navController: NavHostController,
     viewModel: MainViewModel,
     showApplyDialog: MutableState<Boolean>,
@@ -123,8 +125,8 @@ fun LetterIconPackApp(
                 title = {
                     Text(
                         text = when (currentRoute) {
-                            MenuItem.WhyLettersIcons.title.lowercase().trim() -> {
-                                "${MenuItem.WhyLettersIcons.title}?"
+                            MenuItem.WhyUsIconPack.title.lowercase().trim() -> {
+                                "${MenuItem.WhyUsIconPack.title}?"
                             }
 
                             MenuItem.IconRequest.title.lowercase().trim() -> {
@@ -143,9 +145,9 @@ fun LetterIconPackApp(
                 ),
                 navigationIcon = {
                     when (currentRoute) {
-                        MenuItem.WhyLettersIcons.title.lowercase().trim() -> {
+                        MenuItem.WhyUsIconPack.title.lowercase().trim() -> {
                             IconButton(onClick = {
-                                selectedItem.value = MenuItem.WhyLettersIcons
+                                selectedItem.value = MenuItem.WhyUsIconPack
                                 navController.popBackStack()
                             }) {
                                 Icon(
@@ -304,9 +306,9 @@ fun DrawerContent(navController: NavHostController, viewModel: MainViewModel) {
                                         }
                                     }
 
-                                    is MenuItem.WhyLettersIcons -> {
+                                    is MenuItem.WhyUsIconPack -> {
                                         navController.navigate(
-                                            route = MenuItem.WhyLettersIcons.title.lowercase().trim()
+                                            route = MenuItem.WhyUsIconPack.title.lowercase().trim()
                                         )
                                         coroutineScope.launch {
                                             drawerState.close()
@@ -332,7 +334,7 @@ fun DrawerContent(navController: NavHostController, viewModel: MainViewModel) {
                             )
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
-                                text = if (it.title == MenuItem.WhyLettersIcons.title) "${it.title}?" else it.title,
+                                text = if (it.title == MenuItem.WhyUsIconPack.title) "${it.title}?" else it.title,
                                 fontSize = 16.sp,
                                 fontFamily = FontFamily(Font(R.font.inter)),
                                 textAlign = TextAlign.Start,
@@ -352,7 +354,7 @@ fun DrawerContent(navController: NavHostController, viewModel: MainViewModel) {
 
         }
     ) {
-        LetterIconPackApp(
+        DemoIconPackApp(
             viewModel = viewModel,
             navController = navController,
             showApplyDialog = showApplyDialog,
@@ -386,6 +388,17 @@ fun applyIcons(context: Context, showApplyDialog: MutableState<Boolean>) {
                 )
             }
             openIntent(context, novaIntent, showApplyDialog)
+        }
+
+        context.getString(R.string.mlauncher_package_name),
+        context.getString(R.string.mlauncher_dev_package_name) -> {
+            val mlauncherIntent = Intent("app.mlauncher.APPLY_ICONS").apply {
+                setPackage(defaultLauncherPkg)
+                putExtra("packageClass", BuildConfig.APPLICATION_ID)
+                putExtra("packageName", context.getString(R.string.app_name))
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            }
+            openIntent(context, mlauncherIntent, showApplyDialog)
         }
 
         context.getString(R.string.niagara_package_name) -> {
@@ -557,21 +570,27 @@ fun ReviewDialog(
 }
 
 @Composable
-fun CustomIcon(letters: String, cornerShape: RoundedCornerShape, modifier: Modifier = Modifier) {
+fun CustomIcon(
+    drawableRes: Int,
+    cornerShape: RoundedCornerShape,
+    modifier: Modifier = Modifier,
+    iconSize: Dp = 32.dp    // allow overriding icon size
+) {
     Box(
         modifier = modifier
-            .size(60.dp)
-            .clip(cornerShape)
-            .background(color = Color(0xFF212121)),
+            .size(60.dp)              // outer box fixed size
+            .clip(cornerShape),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = letters,
-            fontFamily = FontFamily(Font(R.font.inter)),
-            color = Color.White, fontSize = 24.sp
+        Image(
+            painter = painterResource(id = drawableRes),
+            contentDescription = null,
+            modifier = Modifier.size(iconSize),          // force icon size
+            contentScale = ContentScale.Fit              // scale to fit
         )
     }
 }
+
 
 @Composable
 fun DisposableEffectWithLifecycle(

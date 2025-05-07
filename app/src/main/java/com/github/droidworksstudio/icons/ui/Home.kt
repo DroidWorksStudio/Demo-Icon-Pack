@@ -74,7 +74,7 @@ fun Dashboard(
     val scrollState = rememberScrollState()
     val context = LocalContext.current
     val showDimensionsDialog = remember { mutableStateOf(false) }
-    val iconsLabel = viewModel.lettersList
+    val iconsDrawable = viewModel.drawableList
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
@@ -110,32 +110,44 @@ fun Dashboard(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceAround
                             ) {
-                                iconsLabel.subList(0, 4).forEach { letters ->
-                                    CustomIcon(letters = letters, RoundedCornerShape(16.dp))
+                                iconsDrawable.subList(0, 4).forEach { drawable ->
+                                    CustomIcon(
+                                        drawableRes = drawable,
+                                        cornerShape = RoundedCornerShape(16.dp)
+                                    )
                                 }
                             }
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceAround
                             ) {
-                                iconsLabel.subList(4, 8).forEach { letters ->
-                                    CustomIcon(letters = letters, RoundedCornerShape(16.dp))
+                                iconsDrawable.subList(4, 8).forEach { drawable ->
+                                    CustomIcon(
+                                        drawableRes = drawable,
+                                        cornerShape = RoundedCornerShape(16.dp)
+                                    )
                                 }
                             }
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceAround
                             ) {
-                                iconsLabel.subList(8, 12).forEach { letters ->
-                                    CustomIcon(letters = letters, RoundedCornerShape(16.dp))
+                                iconsDrawable.subList(8, 12).forEach { drawable ->
+                                    CustomIcon(
+                                        drawableRes = drawable,
+                                        cornerShape = RoundedCornerShape(16.dp)
+                                    )
                                 }
                             }
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceAround
                             ) {
-                                iconsLabel.subList(12, 16).forEach { letters ->
-                                    CustomIcon(letters = letters, RoundedCornerShape(16.dp))
+                                iconsDrawable.subList(12, 16).forEach { drawable ->
+                                    CustomIcon(
+                                        drawableRes = drawable,
+                                        cornerShape = RoundedCornerShape(16.dp)
+                                    )
                                 }
                             }
                         }
@@ -226,7 +238,7 @@ fun Dashboard(
                             horizontalArrangement = Arrangement.spacedBy(10.dp)
                         ) {
                             Image(
-                                painter = painterResource(id = drawable.li),
+                                painter = painterResource(id = drawable.ic_home),
                                 contentDescription = null,
                                 modifier = Modifier.size(40.dp)
                             )
@@ -277,7 +289,7 @@ fun Dashboard(
                                 contentAlignment = Alignment.Center
                             ) {
                                 Image(
-                                    painter = painterResource(id = drawable.li),
+                                    painter = painterResource(id = drawable.ic_home),
                                     contentDescription = null,
                                     modifier = Modifier.size(100.dp)
                                 )
@@ -294,7 +306,7 @@ fun Dashboard(
                     shape = RoundedCornerShape(16.dp),
                     onClick = {
                         navController.navigate(
-                            route = MenuItem.WhyLettersIcons.title.lowercase().trim()
+                            route = MenuItem.WhyUsIconPack.title.lowercase().trim()
                         )
                     },
                     contentPadding = PaddingValues(16.dp),
@@ -372,7 +384,7 @@ fun Dashboard(
             ) {
                 Text(
                     style = TextStyle(textDecoration = TextDecoration.Underline),
-                    text = stringResource(string.droid_works_studio),
+                    text = stringResource(string.powered_by_us_label),
                     fontFamily = FontFamily(Font(R.font.inter)),
                     fontSize = 16.sp,
                 )

@@ -22,8 +22,8 @@ fun NavGraph(
         composable(route = MenuItem.Home.title.lowercase().trim()) {
             Dashboard(navController = navController, viewModel = viewModel, selectedItem, showApplyDialog = showApplyDialog)
         }
-        composable(route = MenuItem.WhyLettersIcons.title.lowercase().trim()) {
-            WhyLetterIconPack()
+        composable(route = MenuItem.WhyUsIconPack.title.lowercase().trim()) {
+            WhyDemoIconPack()
         }
         composable(route = MenuItem.IconRequest.title.lowercase().trim()) {
             MissingIcons(viewModel = viewModel, navController = navController)
