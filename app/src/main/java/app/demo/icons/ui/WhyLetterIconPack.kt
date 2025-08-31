@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.ui
+package app.demo.icons.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,8 +22,8 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.github.droidworksstudio.icons.R
-import com.github.droidworksstudio.icons.ui.theme.LetterIconPackTheme
+import app.demo.icons.R
+import app.demo.icons.ui.theme.LetterIconPackTheme
 
 @Composable
 fun WhyDemoIconPack(viewModel: MainViewModel = MainViewModel()) {

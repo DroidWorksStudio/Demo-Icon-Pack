@@ -9827,7 +9827,7 @@
     <!--Lawnchair-->
     <item component="ComponentInfo{app.lawnchair.play/app.lawnchair.LawnchairLauncher}" drawable="lc" />
     <!--Demo Icon Pack-->
-    <item component="ComponentInfo{app.demo.icons/com.github.droidworksstudio.icons.MainActivity}" drawable="li" />
+    <item component="ComponentInfo{app.demo.icons/app.demo.icons.MainActivity}" drawable="li" />
 
 
 </resources>

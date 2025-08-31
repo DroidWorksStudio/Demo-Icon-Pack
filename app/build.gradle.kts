@@ -18,7 +18,7 @@ val versionCodeInt =
 val versionNameStr = "$major.$minor.$patch.$build"
 
 android {
-    namespace = "com.github.droidworksstudio.icons"
+    namespace = "app.demo.icons"
     compileSdk = 36
 
     defaultConfig {

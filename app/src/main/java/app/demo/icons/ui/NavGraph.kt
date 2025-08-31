@@ -1,11 +1,11 @@
-package com.github.droidworksstudio.icons.ui
+package app.demo.icons.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.github.droidworksstudio.icons.util.MenuItem
+import app.demo.icons.util.MenuItem
 
 @Composable
 fun NavGraph(

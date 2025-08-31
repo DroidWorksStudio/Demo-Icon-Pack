@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.ui
+package app.demo.icons.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -34,11 +34,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import app.demo.icons.DisposableEffectWithLifecycle
+import app.demo.icons.R
+import app.demo.icons.model.AppInfo
+import app.demo.icons.ui.theme.LetterIconPackTheme
 import coil.compose.rememberAsyncImagePainter
-import com.github.droidworksstudio.icons.DisposableEffectWithLifecycle
-import com.github.droidworksstudio.icons.R
-import com.github.droidworksstudio.icons.model.AppInfo
-import com.github.droidworksstudio.icons.ui.theme.LetterIconPackTheme
 
 @SuppressLint("ContextCastToActivity")
 @Composable

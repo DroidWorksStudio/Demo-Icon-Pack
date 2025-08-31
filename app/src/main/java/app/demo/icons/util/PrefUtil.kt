@@ -1,9 +1,9 @@
-package com.github.droidworksstudio.icons.util
+package app.demo.icons.util
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import com.github.droidworksstudio.icons.datastore
+import app.demo.icons.datastore
 import kotlinx.coroutines.flow.map
 
 class PrefUtil(private val context: Context) {

@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.util
+package app.demo.icons.util
 
 import android.content.ActivityNotFoundException
 import android.content.Context

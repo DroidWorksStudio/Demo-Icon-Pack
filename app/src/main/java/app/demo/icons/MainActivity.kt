@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons
+package app.demo.icons
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -81,12 +81,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.github.droidworksstudio.icons.ui.MainViewModel
-import com.github.droidworksstudio.icons.ui.NavGraph
-import com.github.droidworksstudio.icons.ui.theme.LetterIconPackTheme
-import com.github.droidworksstudio.icons.util.Extensions.openPlayStore
-import com.github.droidworksstudio.icons.util.MenuItem
-import com.github.droidworksstudio.icons.util.PrefUtil
+import app.demo.icons.ui.MainViewModel
+import app.demo.icons.ui.NavGraph
+import app.demo.icons.ui.theme.LetterIconPackTheme
+import app.demo.icons.util.Extensions.openPlayStore
+import app.demo.icons.util.MenuItem
+import app.demo.icons.util.PrefUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

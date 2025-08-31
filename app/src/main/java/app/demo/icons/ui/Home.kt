@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.ui
+package app.demo.icons.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -53,15 +53,15 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.github.droidworksstudio.icons.CustomIcon
-import com.github.droidworksstudio.icons.R
-import com.github.droidworksstudio.icons.R.drawable
-import com.github.droidworksstudio.icons.R.string
-import com.github.droidworksstudio.icons.applyIcons
-import com.github.droidworksstudio.icons.util.Extensions.openPlayStore
-import com.github.droidworksstudio.icons.util.Extensions.openPlayStoreDevPage
-import com.github.droidworksstudio.icons.util.Extensions.openShareIntent
-import com.github.droidworksstudio.icons.util.MenuItem
+import app.demo.icons.CustomIcon
+import app.demo.icons.R
+import app.demo.icons.R.drawable
+import app.demo.icons.R.string
+import app.demo.icons.applyIcons
+import app.demo.icons.util.Extensions.openPlayStore
+import app.demo.icons.util.Extensions.openPlayStoreDevPage
+import app.demo.icons.util.Extensions.openShareIntent
+import app.demo.icons.util.MenuItem
 
 
 @Composable

@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.ui
+package app.demo.icons.ui
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
@@ -11,11 +11,11 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.github.droidworksstudio.icons.R
-import com.github.droidworksstudio.icons.model.AppInfo
-import com.github.droidworksstudio.icons.model.Feature
-import com.github.droidworksstudio.icons.util.MenuItem
-import com.github.droidworksstudio.icons.util.PrefUtil
+import app.demo.icons.R
+import app.demo.icons.model.AppInfo
+import app.demo.icons.model.Feature
+import app.demo.icons.util.MenuItem
+import app.demo.icons.util.PrefUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

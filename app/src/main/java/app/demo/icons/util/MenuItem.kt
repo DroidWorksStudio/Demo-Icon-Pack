@@ -1,6 +1,6 @@
-package com.github.droidworksstudio.icons.util
+package app.demo.icons.util
 
-import com.github.droidworksstudio.icons.R
+import app.demo.icons.R
 
 sealed class MenuItem(val title: String, val icon: Int) {
     object Home : MenuItem("Home", R.drawable.ic_home)

@@ -1,4 +1,4 @@
-package com.github.droidworksstudio.icons.ui.theme
+package app.demo.icons.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
