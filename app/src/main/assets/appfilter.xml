@@ -9703,6 +9703,7 @@
     <item component="ComponentInfo{com.fairphone.myfairphone/com.fairphone.presentation.ui.activity.MainActivity}" drawable="fp" />
     <!--MultiLauncher-->
     <item component="ComponentInfo{app.mlauncher/com.github.droidworksstudio.mlauncher.MainActivity}" drawable="ml" />
+    <item component="ComponentInfo{app.mlauncher.dev/com.github.droidworksstudio.mlauncher.MainActivity}" drawable="ml" />
     <!--Credit Karma-->
     <item component="ComponentInfo{com.creditkarma.mobile.international/com.creditkarma.mobile.international.landing.ui.LandingActivity}" drawable="ck" />
     <!--Nectar-->
